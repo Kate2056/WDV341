@@ -53,7 +53,7 @@
     <title>PHP Functions</title>
 </head>
 <body>
-    <h1>WDV495 Intro PHP</h1>
+    <h1>WDV341 Intro PHP</h1>
     <h3>PHP Functions</h3>
     <strong>Formated Date:</strong> <?php formatDate(date_create())?>
     <strong>International Formated Date: </strong> <?php formatInternationalDate(date_create());?>
