@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV101 Intro HTML and CSS</title>
+
+<style>
+
+	form	{
+		width:600px;
+		margin:auto;
+		background-color:lightblue;	
+		padding-left: 20px;
+	}
+	
+	form legend	{
+		font-size:larger;
+		text-align:center;
+	}
+	
+	
+
+
+</style>
+
+</head>
+<!--- Modify the 'Example Form' to add the following fields:
+
+Customer Email - consider using the type='email' value
+
+A set of radio buttons for current academic standing with appropriate values:
+  High School
+  Freshman
+  Sophomore
+
+A drop down list containing the following options:  Use their acronym for the value attribute
+  Default option
+  Computer Information Systems
+  Graphic Design
+  Web Development
+
+Two checkboxes with appropriate value attributes:
+  Please contact me with program information
+  I would like to contact an program advisor
+
+A textarea for 'Comments'
+
+Modify the DemonstrateFormHandler.php to display the fields in the following format as stand alone fields on the confirmation page:
+
+  Dear firstName,
+
+  Thank for you for your interest in DMACC.  
+
+  We have you listed as an academicStanding starting this fall. 
+
+  You have declared selectedMajor as your major. 
+
+  Based upon your responses we will provide the following information in our confirmation email to you at emailAddress.
+
+  checkBox
+
+  checkBox
+
+  You have shared the following comments which we will review:
+
+  comments
+-->
+<body>
+<h1>WDV101 Intro HTML and CSS</h1>
+<h2>UNIT 5 - Lesson 2 Server Side Forms</h2>
+<form id="form1" name="form1" method="post" action="demonstrateFormHandler.php">
+
+  <legend>Example Form</legend>
+  
+  <p>
+  	<label for="first_name">First Name:</label> 
+    <input type="text" name="first_name" id="first_name" />
+  </p>
+  
+  <p>
+  	<label for="last_name">Last Name:</label> 
+    <input type="text" name="last_name" id="last_name" />
+  </p>
+  
+  <p>
+  	<label for="email_address">Email Address:</label> 
+    <input type="email" name="email_address" id="email_address" placeholder="johndoe@email.com"/>
+  </p>
+  <p>
+    <label for="academic_standing">Academic Standing: </label>
+    <input type="radio" name="academic_standing" value="highSchool"> <label for="highSchool">High School</label>
+    <input type="radio" name="academic_standing" value="freshman"> <label for="freshman">Freshman</label>
+    <input type="radio" name="academic_standing" value="sophomore"> <label for="sophomore">Sophomore</label>
+  </p>
+  <p>
+    <label for="selected_major">Choose your major:</label>
+    <select name="selected_major" id="selected_major">
+      <option value="">Default option</option>
+      <option value="CIS">Computer Information Systems</option>
+      <option value="GD">Graphic Design</option>
+      <option value="WDV">Web Development</option>
+    </select>
+  </p>
+  <p>
+    <input type="checkbox"  name="contactProgramInfo" value="yes" id="contactProgramInfo"><label for="contactProgramInfo">Please contact me with program information</label>
+    <br>
+    <input type="checkbox" name="contactProgramAdvisor" value="yes" id="contactProgramAdvisor"><label for="contactProgramAdvisor">I would like to contact an program advisor</label>
+  </p>
+  <label for="comments">Comments: </label>
+  <textarea id="comments" name="comments" rows="4" columns="50">
+
+  </textarea>
+  <p>
+    <input type="submit" name="button" id="button" value="Submit" />
+    <input type="reset" name="button2" id="button2" value="Reset" />
+  </p>
+  
+</form>
+
+<p>&nbsp;</p>
+</body>
+
+</html>
