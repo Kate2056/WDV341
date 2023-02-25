@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        h1{
+            text-align:center;
+            padding:15px;
+        }
+        form{
+            display:flex;
+            flex-direction:column;
+            
+        }
+        #container{
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            display:flex;
+            justify-content: center;
+            margin:40px;
+            box-shadow: 0 2px 16px rgba(155, 154, 154, 0.6);
+        }
+        input, label, select{
+            margin:10px;
+            font-size:18px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .center{
+            text-align:center;
+        }
+        .bannerContainer{
+            position: relative;
+            text-align: center;
+            color: white;
+            background-color:#4a3c38;
+            border-radius:5px;
+        }
+        body{
+            background-color:#e3e3e3;
+        }
+        .banner{
+            border-radius:10px;
+        }
+        #backgroundImage{
+            background-image: url(wood.png);
+            opacity:1;
+            padding:20px;
+        }
+        .left{
+            float:left;
+        }
+        .right{
+            float:right;
+        }
+       
+    </style>
+</head>
+<body>
+    <!--
+    Create an HTML form with the following fields.
+        Contact Name:
+        Contact Email Address:
+        A drop down with a list of reasons for contact
+        Comments:
+
+        The form page should be formatted and styled as a business web page. You are welcome to use a previous project as the basis for this project.
+        W
+    -->
+    <div class="bannerContainer">
+        <img class="banner" alt="A picture of desserts and coffee." src="coffeeDesserts.jpg">
+        <header><h1>Contact Us</h1></header>
+        
+    </div>
+    <div id="backgroundImage">
+    <div id="container">
+    <form method="POST" action="formHandler.php">
+        <div>
+        <label class="left" for="contactName">Contact Name:</label>
+        <input class="right" type="text" name="contactName" id="contactName">
+        </div>
+        <div>
+        <label class="left" for="emailAddress">Contact Email Address:</label>
+        <input class="right" type="email" name="emailAddress" id="emailAdress" placeholder="johndoe@gmail.com">
+        </div>
+        <div>
+        <label class="left" for="contactReason">Reason for Contact:</label>  
+        <select class="right" name="contactReason" id="contactReason">
+            <option value="">Select a Reason</option>
+            <option value="Questions">Questions</option>
+            <option value="Concerns">Concerns</option>
+            <option value="Other">Other</option>
+        </select>
+        </div>
+        <div>
+        <label class="left" for="comments">Comments:</label>
+            <textarea class="right" name="comments" id="comments"></textarea>
+        </div>
+        <div class="center">
+        <input type="submit" name="submit" id="submit" value="Submit" />
+        <input type="reset" name="reset" id="reset" value="Reset" />
+    </div>
+    </form>
+</div>
+</div>
+</body>
+</html>
