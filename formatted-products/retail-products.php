@@ -46,22 +46,16 @@
                 if($row["product_status"] != ""){
                     echo "<p class='productStatus'>" . $row["product_status"] . "</p>";
                 }
-                echo "<p class='productInventory'>" . $row["product_inStock"] . " In Stock! </p>";
+                if($row["product_inStock"] < 10){
+                    echo "<p class='productLowInventory'>" . $row["product_inStock"] . " In Stock! </p>";
+                }else{
+                    echo "<p class='productInventory'>" . $row["product_inStock"] . " In Stock! </p>";
+                }
                 echo "</div>";
             }
 
         ?>
-        <div class="productBlock">
-            <div class="productImage">
-                <image src="productImages/monitor.jpg">
-            </div>
-            <p class="productName">New 27" Monitor</p>
-            <p class="productDesc">This is a new monitor. Available for desktop uses. A good choice for home office and school work.</p>
-            <p class="productPrice">$159.00</p>
-            <!-- The productStatus element should only be displayed if there is product_status data in the record -->
-            <p class="productStatus">New Item!</p>            
-            <p class="productInventory"># In Stock!</p>
-        </div>
+        
     </section>
 
 </body>
