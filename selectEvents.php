@@ -27,19 +27,14 @@
     <h1>WDV341 Intro Php</h1>
     <h2>Select Example</h2>
     <?php
-    require "dbConnect.php";
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
     try{
+        require 'dbConnect.php';
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "SELECT name, description FROM wdv341_events";
-    
         $stmt = $conn->prepare($sql);
-    
         $stmt->execute();
-
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    }
-    catch(Exception $e){
+    }catch (PDOException $e){
         echo "\n Issues with SQL, error message: " . $e->getMessage();
     }
     
