@@ -17,53 +17,16 @@
 		text-align:center;
 	}
 	
+  #honeypot{
+    display:none;
+  }
 	
 
 
 </style>
 
 </head>
-<!--- Modify the 'Example Form' to add the following fields:
 
-Customer Email - consider using the type='email' value
-
-A set of radio buttons for current academic standing with appropriate values:
-  High School
-  Freshman
-  Sophomore
-
-A drop down list containing the following options:  Use their acronym for the value attribute
-  Default option
-  Computer Information Systems
-  Graphic Design
-  Web Development
-
-Two checkboxes with appropriate value attributes:
-  Please contact me with program information
-  I would like to contact an program advisor
-
-A textarea for 'Comments'
-
-Modify the DemonstrateFormHandler.php to display the fields in the following format as stand alone fields on the confirmation page:
-
-  Dear firstName,
-
-  Thank for you for your interest in DMACC.  
-
-  We have you listed as an academicStanding starting this fall. 
-
-  You have declared selectedMajor as your major. 
-
-  Based upon your responses we will provide the following information in our confirmation email to you at emailAddress.
-
-  checkBox
-
-  checkBox
-
-  You have shared the following comments which we will review:
-
-  comments
--->
 <body>
 <h1>WDV101 Intro HTML and CSS</h1>
 <h2>UNIT 5 - Lesson 2 Server Side Forms</h2>
@@ -109,6 +72,7 @@ Modify the DemonstrateFormHandler.php to display the fields in the following for
   <textarea id="comments" name="comments" rows="4" columns="50">
 
   </textarea>
+  <input id="honeypot" name="honeypot" type="text" value="">
   <p>
     <input type="submit" name="button" id="button" value="Submit" />
     <input type="reset" name="button2" id="button2" value="Reset" />

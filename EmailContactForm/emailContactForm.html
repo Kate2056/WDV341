@@ -63,16 +63,7 @@
     </style>
 </head>
 <body>
-    <!--
-    Create an HTML form with the following fields.
-        Contact Name:
-        Contact Email Address:
-        A drop down with a list of reasons for contact
-        Comments:
-
-        The form page should be formatted and styled as a business web page. You are welcome to use a previous project as the basis for this project.
-        W
-    -->
+    
     <div class="bannerContainer">
         <img class="banner" alt="A picture of desserts and coffee." src="coffeeDesserts.jpg">
         <header><h1>Contact Us</h1></header>
@@ -80,14 +71,14 @@
     </div>
     <div id="backgroundImage">
     <div id="container">
-    <form method="POST" action="formHandler.php">
+    <form id="emailForm" method="POST" action="formHandler.php">
         <div>
         <label class="left" for="contactName">Contact Name:</label>
         <input class="right" type="text" name="contactName" id="contactName">
         </div>
         <div>
         <label class="left" for="emailAddress">Contact Email Address:</label>
-        <input class="right" type="email" name="emailAddress" id="emailAdress" placeholder="johndoe@gmail.com">
+        <input class="right" type="email" name="emailAddress" id="emailAddress" placeholder="johndoe@gmail.com">
         </div>
         <div>
         <label class="left" for="contactReason">Reason for Contact:</label>  
@@ -103,10 +94,12 @@
             <textarea class="right" name="comments" id="comments"></textarea>
         </div>
         <div class="center">
+      
         <input type="submit" name="submit" id="submit" value="Submit" />
         <input type="reset" name="reset" id="reset" value="Reset" />
     </div>
     </form>
+  
 </div>
 </div>
 </body>

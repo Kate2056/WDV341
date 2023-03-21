@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,20 +112,17 @@
         $contactEmailMessage .= "Comments: " . $comments;
         $contactEmailMessage .= "Date of Response: " . date_format($date, "m/d/Y");
 
+	echo "<h1>Thank you for contacting us!</h1>";
+    	echo "<div class='phpContainer'>";
+        echo "<p><strong>Your reason for contacting us was:</strong> " . $contactReason . " </p>";
+        echo "<p><strong>You also left the following comments: </strong>" . $comments . " </p>";
 
 
         mail($emailAddress, "Contact Form Response", $htmlContent, $headers);
         mail("kaitlynbriggs99@gmail.com", "New Contact Form Response", $contactEmailMessage, $headers);
-
-        //This email should be formatted using HTML and CSS.  It should look like it is from the same site as the form page. 
+    
     ?>
-    <h1>Thank you for contacting us!</h1>
-    <div class="phpContainer">
-    <?php
-        echo "<p><strong>Your reason for contacting us was:</strong> " . $contactReason . " </p>";
-        echo "<p><strong>You also left the following comments: </strong>" . $comments . " </p>";
-
-    ?>
+    
     </div>
 </div>
 </body>
