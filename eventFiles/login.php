@@ -1,4 +1,6 @@
 <?php
+    $errorMsg = ""; 
+    $validuser = false;
 
     if(isset($_POST['submit'])){
         echo "Form Submitted";
@@ -20,12 +22,13 @@
         $row = $stmt->fetch();
 
         if($row){
-            echo "Valid Data";
             $errorMsg = "";
+            $validuser = true;
 
         }
         else{
             $errorMsg = "Invalid Username or Password";
+            $validuser = false;
         }
     
     }
@@ -47,7 +50,24 @@
 </head>
 <body>
     <h1>Event Login System</h1>
-
+    <?php
+    if($validuser){
+        echo "display admin";
+    
+    ?>
+    <h2>Welcome to the Admin System</h2>
+    <h3>You are signed in as: <?php echo $inUserName; ?></h3>
+    <ul>
+        <li>Enter new events</li>
+        <li>Enter new event users</li>
+        <li>Sign off</li>
+    </ul>
+    <?php
+    }
+    else{
+        echo "display form";
+       
+    ?>
     <form method="post" action="login.php">
         <span><?php echo $errorMsg ?></span>
         <p>
@@ -56,10 +76,13 @@
         </p>
         <p>
             <label for="inPassword">Password: </label>
-            <input type="text" name="inPassword" id="inPassword" value="">
+            <input type="password" name="inPassword" id="inPassword" value="">
         </p>
         <input type="submit" name="submit" value="Submit">
         <input type="reset" value="Reset">
     </form>
+    <?php
+    }
+    ?>
 </body>
 </html>
