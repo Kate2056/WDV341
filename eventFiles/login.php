@@ -1,6 +1,10 @@
 <?php
+    session_start();
+
+    
     $errorMsg = ""; 
     $validuser = false;
+
 
     if(isset($_POST['submit'])){
         echo "Form Submitted";
@@ -24,6 +28,8 @@
         if($row){
             $errorMsg = "";
             $validuser = true;
+            $_SESSION['validuser'] = true;
+            $_SESSION['username'] = $inUserName;
 
         }
         else{
@@ -31,6 +37,11 @@
             $validuser = false;
         }
     
+    }
+    else{
+        if(isset($_SESSION['validuser'])){
+            $validuser = true;
+        }
     }
 
 
@@ -41,31 +52,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Login</title>
-    <style>
-        span{
-            color:red;
-        }
-    </style>
+    <link rel='stylesheet' href="stylesheets/styles.scss">
+    <link rel='stylesheet' href="stylesheets/styles.css">
+    <title>Login</title>
 </head>
 <body>
     <h1>Event Login System</h1>
     <?php
     if($validuser){
-        echo "display admin";
-    
+       
     ?>
     <h2>Welcome to the Admin System</h2>
-    <h3>You are signed in as: <?php echo $inUserName; ?></h3>
+    <h3>You are signed in as: <?php echo $_SESSION['username']; ?></h3>
     <ul>
-        <li>Enter new events</li>
-        <li>Enter new event users</li>
-        <li>Sign off</li>
+        <li><a href="login.php">Admin Home</a></li>
+        <li><a href="eventNew.php">Add New Event</a></li>
+        <li><a href="eventList.php">View Events</a></li>
+        <li><a href="logout.php">Sign off</a></li>
     </ul>
     <?php
     }
     else{
-        echo "display form";
+        
        
     ?>
     <form method="post" action="login.php">

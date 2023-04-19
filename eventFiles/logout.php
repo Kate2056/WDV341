@@ -1,11 +1,12 @@
 
 <?php
 
-
+    session_start();
     session_unset();
     session_destroy();
 
     $conn = null;
 
-    header('Location: login.php"');
+    header("Location: login.php");
+
 ?>

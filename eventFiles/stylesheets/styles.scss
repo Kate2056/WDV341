@@ -1,0 +1,66 @@
+$backgroundColor: rgb(203, 207, 232);
+
+body{
+    background-color: $backgroundColor;
+    text-align:center;
+}
+
+ul{
+    background-color: rgb(83, 83, 137);
+    color:white;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    width:100%;
+
+    li{
+        list-style-type:none;
+        color:white;
+        padding:15px 0;
+        width:100%;
+        text-align: center;
+        margin:0;
+    }
+
+    li:hover{
+        background-color:  rgb(102, 102, 165);
+    }
+
+    a{
+        text-decoration: none;
+        color:white;
+        font-size:20px;
+        font-weight: bold;
+    }
+
+    a:hover{
+        color:white;
+        
+    }
+
+    a:visited{
+        color:white;
+    }
+}
+
+table {
+    width:800px;
+    margin:auto;
+    margin-bottom:10px;
+    background-color: white;
+}
+
+td {
+    border: thin solid black;
+    padding:5px;
+    font-size:20px;
+}
+
+#eventDuration{
+    display:none;
+}
+
+span{
+    color:red;
+    font-size:25px;
+}

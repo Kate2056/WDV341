@@ -2,13 +2,13 @@
     session_start();
     
     if(isset($_SESSION['validuser'])){
-        echo "Valid User, Show Page";
+
     }
     else{
-        header("Location: ../login.php");
+        header("Location: login.php");
     }
     
-    require "../dbConnect.php";
+    require "dbConnect.php";
     $errorMsg = "";
     $formRequested = true;
  
@@ -55,18 +55,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self Posting Event Form</title>
-    <style>
-        #eventDuration{
-            display:none;
-        }
-        
-        span{
-            color:red;
-            font-size:25px;
-        }
-
-    </style>
+    <link rel='stylesheet' href="stylesheets/styles.scss">
+    <link rel='stylesheet' href="stylesheets/styles.css">
+    <title>New Event</title>
 </head>
 <body>
     <h1>WDV341 Intro PHP</h1>
@@ -74,8 +65,8 @@
     <h3>You are signed in as: <?php echo $_SESSION['username']; ?></h3>
     <ul>
         <li><a href="login.php">Admin Home</a></li>
+        <li><a href="eventNew.php">Add New Event</a></li>
         <li><a href="eventList.php">View Events</a></li>
-        <li><a href="">Enter new event users</a></li>
         <li><a href="logout.php">Sign off</a></li>
     </ul>
     <?php
@@ -83,7 +74,7 @@
             
     ?>
     <span><?php echo $errorMsg; ?></span>
-    <form method="post" action="eventSelfPostForm.php">
+    <form method="post" action="eventNew.php">
     <div>
         <label for="eventName">Event Name: </label>
         <input name="eventName" id="eventName" type="text" value="" />
@@ -115,12 +106,9 @@
     <?php
         }
         else{
-           
-    ?>
-        <h3>Thank You!</h3>
-        <p>Your event has been added to the database. Please check your new event in the Display Events process.</p>
-    <?php
+          
+            header("Location: eventList.php");
         }
-    ?>
+        ?>
 </body>
 </html>
