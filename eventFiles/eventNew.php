@@ -29,7 +29,7 @@
         $dateInserted = $date;
 
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = 'INSERT INTO wdv341_events (name, description, presenter, date, time, date_inserted, date_updated) 
+        $sql = 'INSERT INTO wdv341_events (name, description, presenter, event_date, event_time, date_inserted, date_updated) 
         VALUES (:eventName, :eventDescription, :eventPresenter,  :eventDate, :eventTime, :dateInserted, :dateInserted)';
         
         $stmt = $conn->prepare($sql);
@@ -88,12 +88,12 @@
         <input name="eventPresenter" id="eventPresenter" type="text" value="" />
     </div>
     <div>
-        <label for="eventDate">Event Date (yyy-mm-dd): </label>
-        <input name="eventDate" id="eventDate" type="text" value="" />
+        <label for="eventDate">Event Date: </label>
+        <input name="eventDate" id="eventDate" type="date" value="" />
     </div>
     <div>
-        <label for="eventTime">Event Time (hh:mm): </label>
-        <input name="eventTime" id="eventTime" type="text" value="" />
+        <label for="eventTime">Event Time: </label>
+        <input name="eventTime" id="eventTime" type="time" value="" />
     </div>
     <div>
         <input name="eventDuration" id="eventDuration" value="" type="text"/>
